@@ -27,7 +27,7 @@ The `tennis_ball_publisher` node captures frames from a video source (e.g., an M
 2. Launch the Tennis Ball Tracker nodes using the provided launch file:
 
    ```bash
-   colcon build --packages-select tennis_ball_tracker
+   ros2 launch tennis_ball_tracker bringup.launch.py
    ```
 
 
