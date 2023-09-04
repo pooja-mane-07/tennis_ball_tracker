@@ -8,7 +8,10 @@ class TennisBallPublisher : public rclcpp::Node
 public:
     TennisBallPublisher() : Node("tennis_ball_publisher")
     {
-        auto videoPath = ament_index_cpp::get_package_share_directory("tennis_ball_tracker") + "/resources/tennis-ball-video.mp4";
+        this->declare_parameter("filename", "tennis-ball-video.mp4");
+        auto fileName = this->get_parameter("filename").as_string();
+        auto videoPath = ament_index_cpp::get_package_share_directory("tennis_ball_tracker") + "/resources/" + fileName;
+
         m_videoCapture.open(videoPath);
         if (!m_videoCapture.isOpened())
         {

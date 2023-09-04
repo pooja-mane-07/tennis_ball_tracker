@@ -31,13 +31,10 @@ tennis_ball_listener
   DESTINATION lib/${PROJECT_NAME}
 )
 
-install(DIRECTORY resources 
-  DESTINATION share/${PROJECT_NAME} 
-)
-
-install(DIRECTORY
+install(DIRECTORY 
+  resources 
   launch
-  DESTINATION share/${PROJECT_NAME}
+  DESTINATION share/${PROJECT_NAME} 
 )
 
 
